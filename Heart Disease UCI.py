@@ -88,13 +88,13 @@ rf = RandomForestClassifier(random_state=9)
 rf.fit(X_train,y_train)
 
 s = np.mean(cross_val_score(rf,X_train,y_train,scoring='roc_auc',cv=5))
-print('The accuracy score for RandomForest is: ', s*100)
+print('The accuracy score for Random Forest is: ', s*100)
 
 lr = LogisticRegression(random_state=0)
 lr.fit(X_train,y_train)
 
 s = np.mean(cross_val_score(lr,X_train,y_train,scoring='roc_auc',cv=5))
-print('The accuracy score for RandomForest is: ', s*100)
+print('The accuracy score for Logistic Regression is: ', s*100)
 
 final_model = RandomForestClassifier(n_estimators=60, random_state=9, 
                                      criterion='gini', max_features='sqrt',
